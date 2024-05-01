@@ -1,7 +1,7 @@
 import { ScrollView,Image,Button, StyleSheet, Text, TouchableHighlight, View, TouchableOpacity } from "react-native";
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight,faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 const logo= require("./images/slt-logo.png")
 
 
@@ -12,22 +12,26 @@ const Settings = () => {
  
 
   return (
-    <View style={{alignItems:'center'}}>
+    <View style={{alignItems:'center',flex:1}}>
 
-        <Text style={{fontSize:30,fontWeight:'bold',marginVertical:20,elevation:15,}}>Settings</Text>
+        <View style={styles.header}>
+          <FontAwesomeIcon icon={faArrowLeft} style={styles.backIcon} />
+          <Text style={styles.title}>Send Messages</Text>
+        </View>
+
 
         <View style={{marginTop:80,width:350}}>
        
         <TouchableOpacity style={styles.buttonContainer}>
             <Text style={{fontSize:22,color:"black",fontWeight:500}}>Code List</Text>
-            <FontAwesomeIcon icon={faArrowRight} />
+            <FontAwesomeIcon icon={faArrowRight}style={styles.rightarrow} />
           </TouchableOpacity>
 
 
          
         <TouchableOpacity style={styles.buttonContainer}>
             <Text style={{fontSize:22,color:"black",fontWeight:500}}>ID List</Text>
-            <FontAwesomeIcon icon={faArrowRight} style={{}}/>
+            <FontAwesomeIcon icon={faArrowRight} style={styles.rightarrow}/>
           </TouchableOpacity>
        
 
@@ -56,7 +60,27 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
     elevation: 10,
   },
-  
+  rightarrow:{
+    paddingRight:38
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginVertical:19,
+    paddingHorizontal:100
+    
+  },header:{
+    
+    flexDirection:'row',
+  },
+  backIcon:{
+    fontSize: 30,
+    color: '#000000',
+    marginVertical:25
+   
+  }
+
   
 });
 export default Settings;
