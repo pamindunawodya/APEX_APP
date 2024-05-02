@@ -9,7 +9,7 @@ import { faArrowLeft, faArrowRight, faChevronRight, faTruckArrowRight } from '@f
 const SendMessage = () => {
 
   const handlePress = (item: { id: string; key: string; }) => {
-    // Do something when the item is pressed
+     
     console.log("Item pressed:", item);
   };
 
@@ -47,8 +47,8 @@ const SendMessage = () => {
             Id.map(item => (
               <TouchableHighlight
                 key={item.key}
-                onPress={() => handlePress(item)} // handlePress function to handle touch events
-                underlayColor="transparent" // Customize the color when touched
+                onPress={() => handlePress(item)}  
+                underlayColor="transparent"  
               >
                 <View style={styles.itemContainer}>
                   <Text style={styles.item}>{item.id}</Text>
